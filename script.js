@@ -1,8 +1,8 @@
 //1
 // let drink;
-// const select = document.querySelector("#select");
-// const handlerSelect = () => {
-//   switch (select.value) {
+// const drinks = document.querySelector(".drinks");
+// const drinksSelect = () => {
+//   switch (drinks.value) {
 //     case "coffee":
 //       drink = "Кава";
 //       break;
@@ -15,33 +15,33 @@
 //   }
 //   alert(`ви вибрали ${drink}`);
 // };
-// select.addEventListener("change", handlerSelect);
+// drinks.addEventListener("change", drinksSelect);
 
-//2
-// const input = document.querySelector("#input");
-// const button = document.querySelector("#button");
-// const handlerChecDayOfWeek = () => {
+// 2
+// const input = document.querySelector(".input");
+// const button = document.querySelector(".button");
+// const chekWeeksDay = () => {
 //   switch (input.value) {
 //     case "Понеділок":
 //     case "Вівторок":
 //     case "Середа":
 //     case "Четверг":
 //     case "П`ятниця":
-//       alert("Це рабочий день");
+//       alert("Робочий день");
 //       break;
 //     case "Субота":
 //     case "Неділя":
-//       alert("це вихідний");
+//       alert("Вихідний");
 //       break;
 //     default:
-//       alert("Ведіть день тижня!!!");
+//       alert("Ви ввели неправильне значення");
 //   }
 // };
-// button.addEventListener("click", handlerChecDayOfWeek);
-//3
-// const input = document.querySelector("#input");
-// const button = document.querySelector("#button");
-// const handlerCheckNumberOfManth = () => {
+// button.addEventListener("click", chekWeeksDay);
+// 3
+// const input = document.querySelector(".input");
+// const button = document.querySelector(".button");
+// const cehkMonth = () => {
 //   switch (input.value) {
 //     case "1":
 //     case "2":
@@ -65,11 +65,11 @@
 //       break;
 //   }
 // };
-// button.addEventListener("click", handlerCheckNumberOfManth);
-//4
-// const input = document.querySelector("#input");
-// const button = document.querySelector("#button");
-// const handlerCheckNummberSDayOfManth = () => {
+// button.addEventListener("click", cehkMonth);
+// // 4
+// const input = document.querySelector(".input");
+// const button = document.querySelector(".button");
+// const chekCountofDaysAtMonth = () => {
 //   switch (input.value) {
 //     case "1":
 //     case "3":
@@ -87,58 +87,60 @@
 //       alert("30");
 //       break;
 //     case "2":
-//       alert("28/29");
+//       alert("28 abo (29 - високосний рік) ");
 //       break;
 //   }
 // };
-// button.addEventListener("click", handlerCheckNummberSDayOfManth);
-//5
-// const input = document.querySelector("#input");
-// const button = document.querySelector("#button");
-// const handlerColorForMove = () => {
+// button.addEventListener("click", chekCountofDaysAtMonth);
+// // 5
+// const input = document.querySelector(".input");
+// const button = document.querySelector(".button");
+// const trafficLights = () => {
 //   switch (input.value) {
 //     case "Зелений":
-//       alert("Йти");
+//       alert("Можна рухатись");
 //       break;
 //     case "Жовтий":
-//       alert("Чекати");
+//       alert("Приготуватись");
 //       break;
 //     case "Червоний":
-//       alert("Стоп");
+//       alert("Зупинитись чекати зеленого");
 //       break;
 //     default:
-//       alert("Неправильно ведено колір, ми ще не знаєм що він буде робити");
+//       alert("Неправельно заповнене поле");
 //   }
 // };
-// button.addEventListener("click", handlerColorForMove);
-//6
-// const firstNumber = document.querySelector("#first-number");
-// const secondNumber = document.querySelector("#second-number");
-// const button = document.querySelector("#button-calculator");
-// const select = document.querySelector("#select");
-// let number;
-// const handlerCalculator = () => {
-//   switch (select.value) {
-//     case "+":
-//       number = parseFloat(firstNumber.value) + parseFloat(secondNumber.value);
-//       alert(number);
-//       break;
-//     case "-":
-//       number = parseFloat(firstNumber.value) - parseFloat(secondNumber.value);
-//       alert(number);
-//       break;
-//     case "*":
-//       number = parseFloat(firstNumber.value) * parseFloat(secondNumber.value);
-//       alert(number);
-//       break;
-//     case "/":
-//       number = parseFloat(firstNumber.value) / parseFloat(secondNumber.value);
-//       alert(number);
-//       break;
-//   }
-//   if (select.value === "/" && secondNumber.value === "0") {
-//     document.body.style.backgroundColor = "black";
-//     alert("я ж казала що вселенна схлопнеться");
-//   }
-// };
-// button.addEventListener("click", handlerCalculator);
+// button.addEventListener("click", trafficLights);
+// // 6;
+const firstNumber = document.querySelector(".first-number");
+const secondNumber = document.querySelector(".second-number");
+const button = document.querySelector(".check");
+const sign = document.querySelector(".sign");
+const answer = document.querySelector(".answer");
+
+let number;
+const calculator = () => {
+  switch (sign.value) {
+    case "+":
+      number = parseFloat(firstNumber.value) + parseFloat(secondNumber.value);
+      alert(number);
+      break;
+    case "-":
+      number = parseFloat(firstNumber.value) - parseFloat(secondNumber.value);
+      alert(number);
+      break;
+    case "*":
+      number = parseFloat(firstNumber.value) * parseFloat(secondNumber.value);
+      alert(number);
+      break;
+    case "/":
+      number = parseFloat(firstNumber.value) / parseFloat(secondNumber.value);
+      alert(number);
+      break;
+  }
+  if (sign.value === "/" && secondNumber.value === "0") {
+    document.body.style.backgroundColor = "red";
+    alert("нануль ділити заборонено");
+  }
+};
+button.addEventListener("click", calculator);
